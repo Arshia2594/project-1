@@ -1,54 +1,41 @@
-// import React from 'react'
-// import Header from './components/ui/Header'
+
+// import React, { useState } from "react";
+// import Tabs from "./components/ui/Tab";
 
 
-// const App = () => {
+// const Page = () => {
+//   const [activeTab, setActiveTab] = useState("Overview");
+
 //   return (
-//     <div className='p-6 space-y-8'>
-
-//       <Header
-//       title="Dashboard"
-//       subtitle="Welcome to control panel"
-//       variant="h1"
-//       align="left"
+//     <div>
+//       <Tabs
+//         tabs={["Overview", "Details", "Team", "Files"]}
+//         active={activeTab}
+//         onChange={setActiveTab}
 //       />
 
-//       <Header
-//       title="Employee List"
-//       subtitle="All Ragister Employee Shown Here"
-//       variant="h2"
-//       align="center"
-//       />
-
-//       <Header
-//       title="Setting"
-//       subtitle="Manage Application Preferences"
-//       variant="h3"
-//       align="right"
-//       />
-      
+//       <div className="mt-4">
+//         {activeTab === "Overview" && <div>Overview content...</div>}
+//         {activeTab === "Details" && <div>Details content...</div>}
+//         {activeTab === "Team" && <div>Team content...</div>}
+//         {activeTab === "Files" && <div>Files content...</div>}
+//       </div>
 //     </div>
-//   )
-// }
+//   );
+// };
 
-// export default App
+// export default Page;
+import React from 'react'
 
+import DemoPage from './Pages/DemoPage'
 
-
-import Button from "./components/ui/Button";
-function App() {
+const App = () => {
   return (
-    <div className="p-10">
-      <Button className="w-full">Login</Button>
-      <Button variant="outline" className="mt-4 w-40 ">
-        Cancel
-      </Button>
-      <Button variant="secondary" className="px-10 py-3 text-lg ">
-        Big Button
-      </Button>
+    <div>
+      <DemoPage/>
+      
     </div>
-  );
+  )
 }
 
-export default App;
-
+export default App
