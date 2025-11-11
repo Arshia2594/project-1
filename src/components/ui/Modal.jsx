@@ -1,3 +1,4 @@
+
 import { motion, AnimatePresence } from "framer-motion";
 
 const Modal = ({ open, onClose, title, children, footer }) => {
@@ -5,7 +6,7 @@ const Modal = ({ open, onClose, title, children, footer }) => {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+          className="fixed inset-0  z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
           onClick={onClose}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -26,19 +27,15 @@ const Modal = ({ open, onClose, title, children, footer }) => {
                 onClick={onClose}
                 className="text-gray-500 hover:text-gray-700 text-xl leading-none"
               >
-                ×
+                x
               </button>
             </div>
 
-            {/* Body Content */}
+            {/* Body */}
             <div className="text-gray-700">{children}</div>
 
-            {/* Footer Actions */}
-            {footer && (
-              <div className="mt-6 flex justify-end gap-3">
-                {footer}
-              </div>
-            )}
+            {/* Footer */}
+            {footer && <div className="mt-6 flex justify-end gap-3">{footer}</div>}
           </motion.div>
         </motion.div>
       )}
@@ -47,3 +44,4 @@ const Modal = ({ open, onClose, title, children, footer }) => {
 };
 
 export default Modal;
+
