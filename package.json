@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "date-fns": "^4.1.0",
+    "dayjs": "^1.11.19",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.552.0",
+    "mdb-react-ui-kit": "^9.0.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-datepicker": "^8.9.0",
