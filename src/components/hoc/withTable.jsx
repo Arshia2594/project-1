@@ -1,5 +1,7 @@
+
 import { useState, useMemo } from "react";
 import Pagination from "../ui/Pagination";
+import Input from "../ui/Input";
 
 const withTable = (WrappedComponent) => {
     return function EnhancedTable({ data = [], columns = [], onRowClick }) {
@@ -26,19 +28,31 @@ const withTable = (WrappedComponent) => {
 
         return (
             <div className="space-y-4">
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    value={search}
-                    onChange={(e) => {
-                        setSearch(e.target.value);
-                        setCurrentPage(1);
-                    }}
-                    className="border border-border px-4 py-2 rounded-lg w-64 bg-surface focus:ring-2 focus:ring-primary outline-none"
+
+                <div className="flex items-center gap-3">
+                    <div className="flex items-center border rounded-lg overflow-hidden">
+                        <input
+                            type="text"
+                            placeholder="Type to search..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className="px-3 py-2 outline-none w-[250px] text-gray-700"
+                        />
+                        <button
+                            onClick={() => setCurrentPage(1)}
+                            className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 font-semibold"
+                        >
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+
+                <WrappedComponent
+                    data={paginatedData}
+                    columns={columns}
+                    onRowClick={onRowClick}
                 />
-
-
-                <WrappedComponent data={paginatedData} columns={columns} onRowClick={onRowClick} />
 
                 <Pagination
                     currentPage={currentPage}
